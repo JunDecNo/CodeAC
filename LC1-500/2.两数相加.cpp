@@ -42,8 +42,8 @@ class Solution {
       }
     }
     //在最后判断是否存在进位
-    if(c==1){
-        before1->next=new ListNode(1);
+    if (c == 1) {
+      before1->next = new ListNode(1);
     }
     return res;
   }

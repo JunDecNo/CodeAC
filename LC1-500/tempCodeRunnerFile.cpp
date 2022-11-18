@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-using namespace std;
 class Solution {
 public:
     string longestPalindrome(string s) {
@@ -32,8 +29,3 @@ public:
         return s.substr(start + 1, maxLen);
     }
 };
-int main() {
-    Solution s;
-    cout << s.longestPalindrome("cbbd");
-    return 0;
-}
