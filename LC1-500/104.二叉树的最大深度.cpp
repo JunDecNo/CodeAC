@@ -41,6 +41,38 @@ public:
             return ans;
         }
     }
+    int maxDepth(TreeNode *T) {
+        TreeNode *p;
+        queue<TreeNode *> qu;
+        qu.push(T);
+        int width = 0;
+        int last = 1;
+        int max = 1;
+        int level =0 ;
+        while (!qu.empty()) {
+            p = qu.front();
+            qu.pop();
+            if (p->left != NULL) {
+                qu.push(p->left);
+                width++;
+            }
+            if (p->right != NULL) {
+                qu.push(p->right);
+                width++;
+            }
+            if (--last == 0) {
+                last = width;
+                if (max < width) {
+                    max = width;
+                }
+                width = 0;
+                level ++;
+
+            }
+        }
+        // delete q;
+        return level;
+    }
 };
 int main() {
     return 0;
